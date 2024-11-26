@@ -1,38 +1,138 @@
-.App {
+/* App.css */
+
+/* 全局样式重置 */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #87bcf5, #efaeeb);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* 容器样式 */
+.container {
+  width: 600px;
+  max-width: 800px;
+  background-color: #ffffff;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* 标题样式 */
+.title {
+  font-size: 2em;
+  color: #007bff;
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* 输入框和按钮样式 */
+.input-wrapper {
   display: flex;
-  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.input-wrapper input {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.input-wrapper button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.input-wrapper button:hover {
+  background-color: #0056b3;
+}
+
+/* 待办事项列表样式 */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-right: 20px;
+}
+
+li {
+  display: flex; /* 使用 flex 布局 */
+  justify-content: space-between; /* 确保文本和按钮左右分布 */
+  align-items: center; /* 使按钮与文本在垂直方向对齐 */
+  padding: 10px;
+  border-bottom: 1px solid #f0f0f0;
+  width: 100%;  /* 确保宽度足够 */
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s;
+  margin-right: 100px;
+}
+
+.list-item:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.todo-text {
+  flex-grow: 1;  /* 让文本占据剩余空间 */
+  word-wrap: break-word; /* 长单词换行 */
+  overflow-wrap: break-word; /* 允许长单词换行 */
+  white-space: normal; /* 允许换行 */
+  margin-right: 10px; /* 增加文本与按钮的间距 */
+  text-align: left; /* 确保换行后的文本左对齐 */
+  display: block; /* 强制文本块级显示，使换行和左对齐生效 */
+  max-width: calc(100% - 130px);
+}
+/* 编辑和删除按钮样式 */
+.button-container {
+  display: flex; /* 按钮容器也使用 flexbox */
+  gap: 10px; /* 按钮之间的间距 */
+}
+
+.edit-button,
+.delete-button {
+  padding: 5px 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.edit-button {
+  background-color: #ffc107;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.edit-button:hover {
+  background-color: #e0a800;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.delete-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
 }
